@@ -1,5 +1,5 @@
 ## Destructuring 
-Use for : 
+Good for : 
 - read object returned by function
 - default function parameter value ```function random ({ min=1, max=300 } = {}) {}```
 - [regexp extraction](https://ponyfoo.com/articles/es6-destructuring-in-depth#use-cases-for-destructuring)
