@@ -48,3 +48,14 @@ var html = `<p>
 var singleLine = String.raw`The "\n" newline won't result in a new line.`
 ```
 NOTE : you can create your own template functions, usable in the same fashion as String.raw , see [here](https://ponyfoo.com/articles/es6-template-strings-in-depth#demystifying-tagged-templates)
+
+## Arrow Functions
+Careful with their [Lexical Scope](https://derickbailey.com/2015/09/28/do-es6-arrow-functions-really-solve-this-in-javascript/) !
+```js
+[1, 2, 3, 4].map((num, index) => num * 2 + index)
+
+[1, 2, 3, 4].map(num => {
+  var multiplier = 2 + num
+  return num * multiplier
+})
+```
