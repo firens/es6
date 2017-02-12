@@ -44,7 +44,7 @@ var html = `<p>
 </ul>
 `
 
-// Raw template
+//// Raw template
 var singleLine = String.raw`The "\n" newline won't result in a new line.`
 ```
 NOTE : you can create your own template functions, usable in the same fashion as String.raw , see [here](https://ponyfoo.com/articles/es6-template-strings-in-depth#demystifying-tagged-templates)
@@ -62,7 +62,7 @@ Note: Careful with their [Lexical Scope](https://derickbailey.com/2015/09/28/do-
 
 ## Object literals
 ```js
-//Property value shorthand
+//// Property value shorthand
 function clear () { elt = {} }
 module.exports = { clear }
 
