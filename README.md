@@ -81,7 +81,20 @@ function greet ({ age, name:greeting='she' }) {
 }
 greet({ name: 'nico', age: 27 })
 ```
+## Iterators
+Applies on :  
+- Arrays, 
+- Objects with [Symbol.iterator] method, 
+- Generators
+- DOM node collections from .querySelectorAll
+```js
+for (let elt of elements) {}
 
+//// Iterators are lazy (can run forever if iterable is infinite)
+for (let elt of elements) {
+  if (elt === 'a') { break; }
+}
+```
 ## Arrow Functions
 ```js
 [1, 2, 3, 4].map((num, index) => num * 2 + index)
