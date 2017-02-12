@@ -95,6 +95,45 @@ for (let elt of elements) {
   if (elt === 'a') { break; }
 }
 ```
+## Generators
+Generates value readable by ```Array.from(g)```, ```[...g]```, or ```for value of g```
+```js
+function* generator () {
+  yield 1
+  yield 2
+  yield 'abcdef'
+}
+var g = generator()
+
+for (value in g) { console.log(value); }
+
+console.log([...g]
+
+//// Manually
+while (true) {
+  let item = g.next()
+  if (item.done) { break; }
+  console.log(item.value)
+}
+
+//// Revert responsibility "the generator defines what to iterate over, not the how"
+function power (factors) {
+  var g = factors()
+  while (true) {
+    let factor = g.next()
+    if (factor.done) {
+      break
+    }
+    console.log(Math.pow(2, factor.value)
+  }
+}
+
+power(function* factors () { yield 2; yield 5; })
+
+//// Throw and Return
+g.throw(err) // Throw an error on the current 'yield' level
+g.return()   // End the sequence, behave like an exception => try/catch possible
+```
 ## Arrow Functions
 ```js
 [1, 2, 3, 4].map((num, index) => num * 2 + index)
@@ -139,3 +178,12 @@ function sum (multiplier, base, ...numbers) {
 | Destructuring  | ```[a, ...rest] = list``` | ```a = list[0], rest = list.slice(1)```  |
 | Concatenation  | ```[1, 2, ...more]```     |```[1, 2].concat(more)```  | 
 | Push onto list | ```list.push(...[3, 4])```| ```list.push.apply(list, [3, 4])```  |
+
+## Symbols
+```js
+var foo = {
+  [Symbol()]: 'foo',
+  [Symbol('foo')]: 'bar',
+  [Symbol.for('bar')]: 'baz',
+}
+```
