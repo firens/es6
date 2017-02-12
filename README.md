@@ -59,3 +59,18 @@ NOTE : you can create your own template functions, usable in the same fashion as
 })
 ```
 Note: Careful with their [Lexical Scope](https://derickbailey.com/2015/09/28/do-es6-arrow-functions-really-solve-this-in-javascript/) !
+
+## Rest parameters
+```js
+function sum (multiplier, base, ...numbers) {
+  var sum = numbers.reduce((accumulator, num) => accumulator + num, base)
+  return multiplier * sum
+}
+```
+
+## Spread operator
+| Use Case       | ES6                       | ES5 |
+| -------------  | -------------             | ------------- |
+| Destructuring  | ```[a, ...rest] = list``` | ```a = list[0], rest = list.slice(1)```  |
+| Concatenation  | ```[1, 2, ...more]```     |```[1, 2].concat(more)```  | 
+| Push onto list | ```list.push(...[3, 4])```| ```list.push.apply(list, [3, 4])```  |
