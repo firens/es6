@@ -60,6 +60,25 @@ NOTE : you can create your own template functions, usable in the same fashion as
 ```
 Note: Careful with their [Lexical Scope](https://derickbailey.com/2015/09/28/do-es6-arrow-functions-really-solve-this-in-javascript/) !
 
+## Object literals
+```js
+//Property value shorthand
+function clear () { elt = {} }
+module.exports = { clear }
+
+function getCar(make, model) {
+	return {
+		make,  // same as make: make
+		model, // same as model: model
+		['make' + make]: true,
+
+    // omits `function` keyword & colon
+		depreciate() {
+			this.value -= 2500;
+		}
+}
+```
+
 ## Rest parameters
 ```js
 function sum (multiplier, base, ...numbers) {
