@@ -1,5 +1,31 @@
 An ES6 cheet sheet made after following this excellent [ES6 tour](https://ponyfoo.com/articles/tagged/es6-in-depth).
 
+## Classes
+```js
+class Car {
+  constructor (startDistance) {
+    this.distance = startDistance
+  }
+  move () {
+    this.distance += 2	
+  }
+  static isFarther (left, right) {
+    return left.distance > right.distance
+  }
+}
+
+//// Inheritance
+class FastCar extends Car {
+  constructor () {
+    super(0)
+  }
+	move () {
+    super.move()
+    this.distance += 4
+  }
+}
+```
+
 ## Destructuring 
 Good for : 
 - read object returned by function
