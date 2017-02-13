@@ -219,3 +219,24 @@ var foo = {
   [Symbol.for('bar')]: 'baz',
 }
 ```
+## Proxies
+```js
+var target = { prop: 2 }
+var handler = {
+  get (target, key) {
+	  console.log(`accessed var $key`)
+    return target[key]
+  },
+  set (target, key, value) {
+    // block modification
+    return false
+  }
+}
+var proxy = new Proxy(target, handler)
+
+var {proxy, revoke} = Proxy.revocable(target, handler)
+revoke()
+```
+Much more on proxies [here](https://ponyfoo.com/articles/es6-proxy-traps-in-depth)
+
+
