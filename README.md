@@ -50,6 +50,38 @@ var singleLine = String.raw`The "\n" newline won't result in a new line.`
 ```
 NOTE : you can create your own template functions, usable in the same fashion as String.raw , see [here](https://ponyfoo.com/articles/es6-template-strings-in-depth#demystifying-tagged-templates)
 
+## Collections
+```js
+////Maps : Iterable, accept any key
+var map = new Map()
+map.set('b', { desc: 'letter b'})
+map.set(2, 'the number 2')
+map.set({ name: 'first object'}, 45)
+
+map.get('b')
+map.delete(2)
+map.has(2)
+map.clear()
+map.size
+
+var map = new Map([[1, 'a'], [2, 'b']])
+for (let [key, value] of map) {
+  console.log(`${key}: ${value}`)
+}
+
+//// WeakMaps : Not Iterable, only object keys
+var map = new WeakMap()
+map.set({ id : 1 })
+
+//// Set : Iterable, no duplicate values
+var set = new Set([1, 2, 3, 4, 4])
+set.add(5)
+
+//// Weakset : Not Iterable, only object values
+var set = new Weakset()
+set.add({})
+```
+
 ## Destructuring 
 Good for : 
 - read object returned by function
