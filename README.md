@@ -239,4 +239,32 @@ revoke()
 ```
 Much more on proxies [here](https://ponyfoo.com/articles/es6-proxy-traps-in-depth)
 
+## Numbers
 
+```js
+Number.isInteger(2)
+Number.isSafeInteger()
+Number.EPSILON
+```
+
+## Arrays
+```js
+Array.from($('div'))  // <- [<div>, <div>, <div>, ...]
+Array.from(arguments, value => typeof value)
+
+Array.of(1, 2, 3)
+
+['a', 'b', 'c'].fill(0)
+['a', 'b', 'c',,,].fill(0, 2)
+new Array(3).fill({})
+
+[1, 2, 3, 4, 5].find((item, i) => i === 3)
+
+[1, 2, 3].keys()
+for (let key of [1, 2, 3].keys()) {
+  console.log(key)
+  // <- 0
+  // <- 1
+  // <- 2
+}
+```
