@@ -37,12 +37,12 @@ class FastCar extends Car {
 ```js
 var {count, today} = { count: 3, names: ['john', 'joe', 'josh'], today: new Date()}
 var html = `<p>
-  	I'm "happy" to have ${count} brothers, today ${today.toLocaleString()}
-  	They are called
-	</p>
-	<ul>
-  	${names.map(name => `<li>${name}</li>`).join('\n')}
-	</ul>
+	I'm "happy" to have ${count} brothers, today ${today.toLocaleString()}
+  They are called
+</p>
+<ul>
+	${names.map(name => `<li>${name}</li>`).join('\n')}
+</ul>
 `
 
 //// Raw template
@@ -267,4 +267,11 @@ for (let key of [1, 2, 3].keys()) {
   // <- 1
   // <- 2
 }
+```
+## Object Methods
+```js
+Object.assign({ a: 1, b: 2 }, { a: 3, c: 4 }) // <- { a: 3, b: 2, c: 4 }
+Object.assign([1, 2, 3], [4, 5]) // <- [4, 5, 3]
+
+Object.getOwnPropertySymbols(a)
 ```
