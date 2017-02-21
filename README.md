@@ -33,6 +33,20 @@ class FastCar extends Car {
   }
 }
 ```
+## String manipulations
+```js
+'ponyfoo'.startsWith('pony')
+'bar,foo'.startsWith('foo', 4)
+
+'ponyfoo'.endsWith('foo')
+'ponyfoo'.endsWith('pony', 4)
+
+'ponyfoo'.includes('ny')
+'ponyfoo'.includes('ny', 3)
+
+'na'.repeat(5) // <- 'nanananana'
+```
+
 ## Template literals
 ```js
 var {count, today} = { count: 3, names: ['john', 'joe', 'josh'], today: new Date()}
