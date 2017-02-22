@@ -141,6 +141,31 @@ import {cloneDeep as clone, map} from 'lodash'
 import {default as _, map} from 'lodash'
 import * as _ from 'lodash'
 ```
+## Promises
+```js
+// Create promises
+let p = new Promise(resolve => resolve())
+let p2 = new Promise((resolve, reject) => reject())
+let pAlwaysSuccess = Promise.resolve('so easy')
+let pAlreadyFailed = Promise.reject('failed because I want it to')
+
+// Handle promise result
+p.then(res => { // handle response})
+p.catch(err => { // handle error })
+
+p.then(
+  res => { // handle response },
+  err => { // handle error })
+
+// Parallel promises 
+Promise.all([fetch('/'), fetch('foo')])
+  .then(responses => responses.map(response => response.statusText))
+  .then(status => console.log(status.join(', ')))
+  
+// First finished, first returned
+Promise.race([ fetch('/'), fetch('foo')])
+  .then(response => // could be either result )
+```
 ## Iterators
 Applies on : 
 - Arrays, 
