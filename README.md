@@ -127,8 +127,22 @@ function greet ({ age, name:greeting='she' }) {
 }
 greet({ name: 'nico', age: 27 })
 ```
+## Modules
+```js
+export default { foo: 'bar' }
+export default function foo () {}
+
+export var foo = 'bar'
+export var baz = 'bar2'
+
+import _ from 'lodash'
+import {map, reduce} from 'lodash'
+import {cloneDeep as clone, map} from 'lodash'
+import {default as _, map} from 'lodash'
+import * as _ from 'lodash'
+```
 ## Iterators
-Applies on :  
+Applies on : 
 - Arrays, 
 - Objects with [Symbol.iterator] method, 
 - Generators
