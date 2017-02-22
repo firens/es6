@@ -1,4 +1,4 @@
-An ES6 cheet sheet made after following this excellent [ES6 tour](https://ponyfoo.com/articles/tagged/es6-in-depth). Written to be useful especially for Scala/Java/C# dev doing a bit of JS on the side (by choice... or more likely because of projects constraints).
+An ES6 cheat sheet made after following this excellent [ES6 tour](https://ponyfoo.com/articles/tagged/es6-in-depth). Written to be useful especially for Scala/Java/C# dev doing a bit of JS on the side (by choice... or more likely because of projects constraints).
 
 ## Let / Const
 Block-scoped declarations. Avoid ```var``` and use the newer keywords ```const``` if possible, ```let``` if not.
